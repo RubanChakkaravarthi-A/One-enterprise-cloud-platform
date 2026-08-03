@@ -1,7 +1,4 @@
-/* ===============================
-   One Enterprise Cloud Platform Employee Registration
-   Premium Enterprise UI
-================================= */
+
 
 *{
     margin:0;
@@ -25,7 +22,7 @@ body{
     margin:auto;
 }
 
-/* Header */
+
 
 header{
     background:rgba(255,255,255,.75);
@@ -65,7 +62,7 @@ nav a:hover{
     color:#2563eb;
 }
 
-/* Registration Section */
+
 
 .registration-section{
     padding:70px 0;
@@ -95,7 +92,7 @@ nav a:hover{
     color:#6b7280;
 }
 
-/* Form Grid */
+
 
 .form-grid{
     display:grid;
@@ -131,7 +128,7 @@ nav a:hover{
     box-shadow:0 0 0 4px rgba(37,99,235,.15);
 }
 
-/* Buttons */
+
 
 .button-group{
     display:flex;
@@ -171,7 +168,7 @@ nav a:hover{
     background:#dbeafe;
 }
 
-/* Footer */
+
 
 footer{
     margin-top:50px;
@@ -181,7 +178,7 @@ footer{
     padding:25px;
 }
 
-/* Responsive */
+
 
 @media(max-width:900px){
 
