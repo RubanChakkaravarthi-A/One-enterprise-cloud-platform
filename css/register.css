@@ -1,0 +1,227 @@
+/* ===============================
+   One Enterprise Cloud Platform Employee Registration
+   Premium Enterprise UI
+================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+    radial-gradient(circle at top left,#dbeafe,transparent 45%),
+    radial-gradient(circle at bottom right,#ede9fe,transparent 45%),
+    #f4f8ff;
+    color:#1f2937;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Header */
+
+header{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.5);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:#2563eb;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+/* Registration Section */
+
+.registration-section{
+    padding:70px 0;
+}
+
+.form-card{
+    background:rgba(255,255,255,.60);
+    backdrop-filter:blur(22px);
+    border-radius:24px;
+    padding:45px;
+    border:1px solid rgba(255,255,255,.5);
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.form-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.form-header h1{
+    font-size:2.3rem;
+    color:#1f2937;
+    margin-bottom:12px;
+}
+
+.form-header p{
+    color:#6b7280;
+}
+
+/* Form Grid */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:10px;
+    font-weight:600;
+    color:#374151;
+}
+
+.form-group input,
+.form-group select{
+    padding:15px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    font-size:15px;
+    background:#fff;
+    transition:.3s;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+/* Buttons */
+
+.button-group{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.register-btn,
+.reset-btn{
+    border:none;
+    padding:15px 40px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.register-btn{
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+}
+
+.register-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(37,99,235,.25);
+}
+
+.reset-btn{
+    background:#eef2ff;
+    color:#2563eb;
+}
+
+.reset-btn:hover{
+    background:#dbeafe;
+}
+
+/* Footer */
+
+footer{
+    margin-top:50px;
+    background:#0f172a;
+    color:#cbd5e1;
+    text-align:center;
+    padding:25px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.form-grid{
+    grid-template-columns:1fr;
+}
+
+header .container{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.form-card{
+    padding:30px 20px;
+}
+
+.form-header h1{
+    font-size:1.9rem;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.button-group{
+    flex-direction:column;
+}
+
+.register-btn,
+.reset-btn{
+    width:100%;
+}
+
+}
