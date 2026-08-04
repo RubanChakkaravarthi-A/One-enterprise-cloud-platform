@@ -1,0 +1,282 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    background:
+    linear-gradient(135deg,#eef5ff,#f5f8ff,#eef2ff);
+    position:relative;
+}
+
+/* Floating Background */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(30px);
+    animation:float 10s ease-in-out infinite;
+}
+
+.one{
+    width:260px;
+    height:260px;
+    background:#2563eb55;
+    top:-80px;
+    left:-60px;
+}
+
+.two{
+    width:350px;
+    height:350px;
+    background:#7c3aed33;
+    right:-100px;
+    top:180px;
+    animation-delay:2s;
+}
+
+.three{
+    width:250px;
+    height:250px;
+    background:#06b6d455;
+    bottom:-80px;
+    left:35%;
+    animation-delay:4s;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-25px);
+}
+
+}
+
+/* Header */
+
+header{
+    padding:20px 0;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.4);
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:#2563eb;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+/* Login Section */
+
+.login-section{
+    height:calc(100vh - 80px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:430px;
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(25px);
+    border-radius:28px;
+    padding:45px;
+    border:1px solid rgba(255,255,255,.5);
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.login-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 30px 70px rgba(37,99,235,.18);
+
+}
+
+.login-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.login-icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    font-size:40px;
+    color:white;
+    margin-bottom:20px;
+    box-shadow:0 15px 40px rgba(37,99,235,.30);
+}
+
+.login-header h1{
+    font-size:32px;
+    margin-bottom:10px;
+    color:#1f2937;
+}
+
+.login-header p{
+    color:#6b7280;
+}
+
+/* Form */
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    border-radius:14px;
+    border:1px solid #d1d5db;
+    outline:none;
+    transition:.3s;
+    font-size:15px;
+}
+
+.input-group input:focus{
+
+border-color:#2563eb;
+
+box-shadow:
+0 0 0 5px rgba(37,99,235,.15);
+
+}
+
+/* Options */
+
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.login-options a{
+    color:#2563eb;
+    text-decoration:none;
+}
+
+/* Button */
+
+.login-btn{
+    width:100%;
+    border:none;
+    padding:16px;
+    border-radius:14px;
+    cursor:pointer;
+    color:white;
+    font-size:17px;
+    font-weight:700;
+    background:
+    linear-gradient(135deg,#2563eb,#4f46e5);
+    transition:.35s;
+}
+
+.login-btn:hover{
+
+transform:
+translateY(-4px)
+scale(1.02);
+
+box-shadow:
+0 20px 35px rgba(37,99,235,.30);
+
+}
+
+/* Message */
+
+#message{
+    margin-top:18px;
+    text-align:center;
+    font-weight:700;
+    color:#dc2626;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.login-card{
+width:95%;
+padding:30px;
+}
+
+.container{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.login-header h1{
+font-size:28px;
+}
+
+}

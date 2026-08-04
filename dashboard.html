@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Enterprise Dashboard | One Enterprise Cloud</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+☁ One Enterprise Cloud
+
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="employees.html">👨‍💼 Employees</a></li>
+
+<li><a href="attendance.html">📅 Attendance</a></li>
+
+<li><a href="leave.html">🌴 Leave</a></li>
+
+<li><a href="payroll.html">💰 Payroll</a></li>
+
+<li><a href="crm.html">🤝 CRM</a></li>
+
+<li><a href="finance.html">💳 Finance</a></li>
+
+<li><a href="index.html">🚪 Logout</a></li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+    <div class="search-box">
+
+    <input
+        type="text"
+        placeholder="Search employees, payroll, CRM..."
+    >
+
+</div>
+
+<h1>Welcome Admin 👋</h1>
+
+<p>Enterprise Cloud Dashboard</p>
+
+</div>
+
+ <div class="top-actions">
+
+    <button class="notification-btn">
+        🔔 <span class="notification-count">5</span>
+    </button>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+    🌙
+</button>
+
+</div>
+
+<div class="profile">
+
+<img src="imgs/WhatsApp Image 2026-08-03 at 16.32.21.jpeg" alt="Profile">
+
+<div>
+
+<h3>Administrator</h3>
+
+<span>System Admin</span>
+
+</div>
+
+<div class="profile-menu">
+
+<button class="profile-btn">▼</button>
+
+<div class="dropdown-menu">
+
+<a href="#">👤 My Profile</a>
+
+<a href="#">⚙️ Settings</a>
+
+<a href="#">🔒 Change Password</a>
+
+<a href="index.html">🚪 Logout</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Statistics -->
+
+<section class="stats">
+
+<div class="stat-card">
+
+<h2>520</h2>
+
+<p>Total Employees</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>98%</h2>
+
+<p>Attendance</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>42</h2>
+
+<p>Projects</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>₹ 2.8Cr</h2>
+
+<p>Revenue</p>
+
+</div>
+
+</section>
+
+<!-- Feature Cards -->
+
+<section class="features">
+
+<a href="employees.html" class="feature-card">
+
+<h2>👨‍💼</h2>
+
+<h3>Employee Management</h3>
+
+<p>Manage employee records and information.</p>
+
+</a>
+
+<a href="attendance.html" class="feature-card">
+
+<h2>📅</h2>
+
+<h3>Attendance</h3>
+
+<p>Track daily attendance records.</p>
+
+</a>
+
+<a href="leave.html" class="feature-card">
+
+<h2>🌴</h2>
+
+<h3>Leave</h3>
+
+<p>Approve and manage employee leave.</p>
+
+</a>
+
+<a href="payroll.html" class="feature-card">
+
+<h2>💰</h2>
+
+<h3>Payroll</h3>
+
+<p>Salary processing and payslips.</p>
+
+</a>
+
+<a href="crm.html" class="feature-card">
+
+<h2>🤝</h2>
+
+<h3>CRM</h3>
+
+<p>Manage customer relationships.</p>
+
+</a>
+
+<a href="finance.html" class="feature-card">
+
+<h2>💳</h2>
+
+<h3>Finance</h3>
+
+<p>Financial reports and accounting.</p>
+
+</a>
+
+</section>
+
+<section class="chart-section">
+
+    <div class="chart-card">
+        <h2>Employee Growth</h2>
+        <canvas id="employeeChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h2>Attendance Overview</h2>
+        <canvas id="attendanceChart"></canvas>
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+}
+
+const employeeChart = new Chart(document.getElementById('employeeChart'), {
+    type: 'bar',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Employees',
+            data: [420,440,460,480,500,520]
+        }]
+    }
+});
+
+const attendanceChart = new Chart(document.getElementById('attendanceChart'), {
+    type: 'line',
+    data: {
+        labels: ['Mon','Tue','Wed','Thu','Fri','Sat'],
+        datasets: [{
+            label: 'Attendance %',
+            data: [95,97,96,98,99,94]
+        }]
+    }
+});
+
+
+</script>
+
+</body>
+
+</html>

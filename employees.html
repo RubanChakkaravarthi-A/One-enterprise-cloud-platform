@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Directory | One Enterprise Cloud</title>
+
+<link rel="stylesheet" href="css/employees.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+☁ One Enterprise Cloud
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="index.html">Home</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="employee-section">
+
+<div class="container">
+
+<div class="title">
+
+<h1>Employee Directory</h1>
+
+<p>
+Search and manage enterprise employees.
+</p>
+
+</div>
+
+<div class="toolbar">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search Employee">
+
+<select id="departmentFilter">
+
+<option value="All">All Departments</option>
+
+<option value="HR">HR</option>
+
+<option value="Development">Development</option>
+
+<option value="Finance">Finance</option>
+
+<option value="CRM">CRM</option>
+
+</select>
+
+</div>
+
+<div
+class="employee-grid"
+id="employeeGrid">
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/employees.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | One Enterprise Cloud</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            ☁ One Enterprise Cloud
+        </div>
+
+        <ul>
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="employees.html">👨‍💼 Employees</a></li>
+            <li><a href="attendance.html">📅 Attendance</a></li>
+            <li><a href="#">🌴 Leave</a></li>
+            <li><a href="#">💰 Payroll</a></li>
+            <li><a href="#">🤝 CRM</a></li>
+            <li><a href="#">💳 Finance</a></li>
+            <li><a href="index.html">🚪 Logout</a></li>
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>📅 Attendance Dashboard</h1>
+                <p>Employee Attendance Management System</p>
+            </div>
+
+            <div class="profile">
+                <img src="imgs/WhatsApp Image 2026-08-03 at 16.32.21.jpeg" alt="Profile">
+
+                <div>
+                    <h3>Administrator</h3>
+                    <span>System Admin</span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="stats">
+
+    <div class="stat-card">
+        <h2>520</h2>
+        <p>Total Employees</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>498</h2>
+        <p>Present Today</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>15</h2>
+        <p>On Leave</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>7</h2>
+        <p>Absent Today</p>
+    </div>
+
+</section>
+
+  <section class="features">
+
+    <div class="feature-card">
+        <h2>🟢</h2>
+        <h3>Today's Attendance</h3>
+        <p>95.8% Employees Present Today</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>⏰</h2>
+        <h3>Late Arrivals</h3>
+        <p>18 Employees Reported Late</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📈</h2>
+        <h3>Weekly Attendance</h3>
+        <p>Average Attendance: 94.2%</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📊</h2>
+        <h3>Monthly Report</h3>
+        <p>View Complete Attendance Analytics</p>
+    </div>
+
+</section>
+
+   <section class="attendance-table">
+
+    <h2>Today's Attendance</h2>
+
+    <table class="employee-table">
+
+        <thead>
+
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Status</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>EMP001</td>
+                <td>Rupan</td>
+                <td>Development</td>
+                <td>09:05 AM</td>
+                <td>06:00 PM</td>
+                <td>✅ Present</td>
+            </tr>
+
+            <tr>
+                <td>EMP002</td>
+                <td>Rahul</td>
+                <td>HR</td>
+                <td>09:20 AM</td>
+                <td>06:15 PM</td>
+                <td>⏰ Late</td>
+            </tr>
+
+            <tr>
+                <td>EMP003</td>
+                <td>Priya</td>
+                <td>Finance</td>
+                <td>-</td>
+                <td>-</td>
+                <td>❌ Absent</td>
+            </tr>
+
+            <tr>
+                <td>EMP004</td>
+                <td>Karthik</td>
+                <td>Support</td>
+                <td>-</td>
+                <td>-</td>
+                <td>🌴 Leave</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+   
+  <section class="quick-actions">
+
+    <h2>Quick Actions</h2>
+
+    <div class="action-buttons">
+
+        <button class="action-btn">➕ Mark Attendance</button>
+
+        <button class="action-btn">📄 Generate Report</button>
+
+        <button class="action-btn">📥 Export Excel</button>
+
+        <button class="action-btn">📧 Send Report</button>
+
+    </div>
+
+</section>
+
+  <section class="analytics">
+
+    <h2>Attendance Analytics</h2>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <h3>Present Rate</h3>
+            <div class="progress">
+                <div class="progress-bar" style="width:96%;">96%</div>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Late Arrivals</h3>
+            <div class="progress">
+                <div class="progress-bar" style="width:18%;">18%</div>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <h3>On Leave</h3>
+            <div class="progress">
+                <div class="progress-bar" style="width:12%;">12%</div>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Absent</h3>
+            <div class="progress">
+                <div class="progress-bar" style="width:6%;">6%</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+  <section class="activity">
+
+    <h2>Recent Activity</h2>
+
+    <div class="activity-item">
+        <span>🟢</span>
+        <div>
+            <h4>Rupan checked in</h4>
+            <p>Today - 09:02 AM</p>
+        </div>
+    </div>
+
+    <div class="activity-item">
+        <span>⏰</span>
+        <div>
+            <h4>Rahul reported late</h4>
+            <p>Today - 09:20 AM</p>
+        </div>
+    </div>
+
+    <div class="activity-item">
+        <span>🌴</span>
+        <div>
+            <h4>Priya applied for leave</h4>
+            <p>Today - 08:30 AM</p>
+        </div>
+    </div>
+
+    <div class="activity-item">
+        <span>📊</span>
+        <div>
+            <h4>Attendance report generated</h4>
+            <p>Today - 10:15 AM</p>
+        </div>
+    </div>
+
+</section>
+
+  <section class="monthly-summary">
+
+    <h2>Monthly Attendance Summary</h2>
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+            <h3>Working Days</h3>
+            <h1>22</h1>
+        </div>
+
+        <div class="summary-card">
+            <h3>Present Days</h3>
+            <h1>21</h1>
+        </div>
+
+        <div class="summary-card">
+            <h3>Leave Taken</h3>
+            <h1>1</h1>
+        </div>
+
+        <div class="summary-card">
+            <h3>Attendance %</h3>
+            <h1>95%</h1>
+        </div>
+
+    </div>
+
+</section>
+
+ <section class="holiday-section">
+
+    <h2>📅 Upcoming Holidays</h2>
+
+    <div class="holiday-card">
+        <h3>🇮🇳 Independence Day</h3>
+        <p>15 August 2026</p>
+    </div>
+
+    <div class="holiday-card">
+        <h3>🎉 Ganesh Chaturthi</h3>
+        <p>18 September 2026</p>
+    </div>
+
+    <div class="holiday-card">
+        <h3>🪔 Diwali</h3>
+        <p>08 November 2026</p>
+    </div>
+
+</section>
+
+ <section class="calendar-section">
+
+    <h2>📅 Attendance Calendar</h2>
+
+    <div class="calendar-card">
+
+        <h3>August 2026</h3>
+
+        <table class="calendar-table">
+
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td class="present">4</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td class="present">7</td>
+                <td class="present">8</td>
+                <td class="leave">9</td>
+                <td class="present">10</td>
+                <td class="present">11</td>
+                <td>12</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section class="performance-section">
+
+    <h2>🏆 Top Attendance Performance</h2>
+
+    <table class="performance-table">
+
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Attendance %</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>🥇</td>
+                <td>Rupan</td>
+                <td>Development</td>
+                <td>100%</td>
+            </tr>
+
+            <tr>
+                <td>🥈</td>
+                <td>Rahul</td>
+                <td>HR</td>
+                <td>98%</td>
+            </tr>
+
+            <tr>
+                <td>🥉</td>
+                <td>Priya</td>
+                <td>Finance</td>
+                <td>96%</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Karthik</td>
+                <td>Support</td>
+                <td>95%</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

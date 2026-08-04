@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 /* ===========================
    One Enterprise Cloud Platform UI
    =========================== */
 
+=======
+>>>>>>> bc074f1 (initial commit)
 *{
     margin:0;
     padding:0;
@@ -25,7 +28,11 @@ body{
     margin:auto;
 }
 
+<<<<<<< HEAD
 /* Header */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 .header{
     position:sticky;
@@ -74,7 +81,11 @@ nav a:hover{
     border-radius:10px;
 }
 
+<<<<<<< HEAD
 /* Hero */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 .hero{
     padding:90px 0;
@@ -179,7 +190,11 @@ nav a:hover{
     color:#2563eb;
 }
 
+<<<<<<< HEAD
 /* Sections */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 section{
     padding:80px 0;
@@ -191,7 +206,11 @@ section h2{
     margin-bottom:50px;
 }
 
+<<<<<<< HEAD
 /* Module Cards */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 .card-grid{
     display:grid;
@@ -216,7 +235,11 @@ section h2{
     margin-bottom:15px;
 }
 
+<<<<<<< HEAD
 /* Technology */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 .tech-grid{
     display:grid;
@@ -233,7 +256,11 @@ section h2{
     font-weight:700;
 }
 
+<<<<<<< HEAD
 /* Statistics */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 .statistics .container{
     display:grid;
@@ -254,7 +281,10 @@ section h2{
     margin-bottom:10px;
 }
 
+<<<<<<< HEAD
 /* Testimonials */
+=======
+>>>>>>> bc074f1 (initial commit)
 
 .testimonial-grid{
     display:grid;
@@ -274,7 +304,11 @@ section h2{
     color:#2563eb;
 }
 
+<<<<<<< HEAD
 /* CTA */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 .cta{
     text-align:center;
@@ -291,7 +325,11 @@ section h2{
     color:#2563eb;
 }
 
+<<<<<<< HEAD
 /* Footer */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 footer{
     background:#0f172a;
@@ -331,7 +369,11 @@ footer h4{
     color:#94a3b8;
 }
 
+<<<<<<< HEAD
 /* Responsive */
+=======
+
+>>>>>>> bc074f1 (initial commit)
 
 @media(max-width:900px){
 

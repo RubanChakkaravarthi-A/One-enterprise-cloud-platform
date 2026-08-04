@@ -22,7 +22,11 @@ body{
     margin:auto;
 }
 
+<<<<<<< HEAD
 
+=======
+/* Header */
+>>>>>>> bc074f1 (initial commit)
 
 header{
     background:rgba(255,255,255,.75);
@@ -178,7 +182,11 @@ footer{
     padding:25px;
 }
 
+<<<<<<< HEAD
 
+=======
+/* Responsive */
+>>>>>>> bc074f1 (initial commit)
 
 @media(max-width:900px){
 
@@ -221,4 +229,8 @@ nav{
     width:100%;
 }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bc074f1 (initial commit)

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leave Management | One Enterprise Cloud</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+
+<div class="logo">
+☁ One Enterprise Cloud
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="employees.html">👨‍💼 Employees</a></li>
+
+<li><a href="attendance.html">📅 Attendance</a></li>
+
+<li><a href="leave.html">🌴 Leave</a></li>
+
+<li><a href="#">💰 Payroll</a></li>
+
+<li><a href="#">🤝 CRM</a></li>
+
+<li><a href="#">💳 Finance</a></li>
+
+<li><a href="index.html">🚪 Logout</a></li>
+
+</ul>
+
+</aside>
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>🌴 Leave Management</h1>
+
+<p>Manage Employee Leave Requests</p>
+
+</div>
+
+<div class="profile">
+
+<img src="imgs/WhatsApp Image 2026-08-03 at 16.32.21.jpeg" alt="Profile">
+
+<div>
+
+<h3>Administrator</h3>
+
+<span>System Admin</span>
+
+</div>
+
+</div>
+
+</header>
+<section class="stats">
+
+    <div class="stat-card">
+        <h2>28</h2>
+        <p>Pending Requests</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>15</h2>
+        <p>Approved Today</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>5</h2>
+        <p>Rejected</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>120</h2>
+        <p>Total Leave Requests</p>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-card">
+        <h2>📝</h2>
+        <h3>Apply Leave</h3>
+        <p>Create a new leave request.</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>✅</h2>
+        <h3>Approve Leave</h3>
+        <p>Review and approve requests.</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>❌</h2>
+        <h3>Reject Leave</h3>
+        <p>Reject invalid leave requests.</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📊</h2>
+        <h3>Leave Reports</h3>
+        <p>View leave analytics and reports.</p>
+    </div>
+
+</section>
+
+<section class="leave-table">
+
+    <h2>Pending Leave Requests</h2>
+
+    <table class="employee-table">
+
+        <thead>
+
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Leave Type</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>EMP001</td>
+                <td>Rupan</td>
+                <td>Casual Leave</td>
+                <td>05 Aug 2026</td>
+                <td>06 Aug 2026</td>
+                <td>Pending</td>
+                <td>
+                    <button class="approve-btn">Approve</button>
+                    <button class="reject-btn">Reject</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>EMP002</td>
+                <td>Rahul</td>
+                <td>Sick Leave</td>
+                <td>08 Aug 2026</td>
+                <td>10 Aug 2026</td>
+                <td>Pending</td>
+                <td>
+                    <button class="approve-btn">Approve</button>
+                    <button class="reject-btn">Reject</button>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+  <section class="leave-balance">
+
+    <h2>Leave Balance</h2>
+
+    <div class="balance-grid">
+
+        <div class="balance-card">
+            <h3>🌴 Casual Leave</h3>
+            <h1>08</h1>
+            <p>Days Remaining</p>
+        </div>
+
+        <div class="balance-card">
+            <h3>🏥 Sick Leave</h3>
+            <h1>12</h1>
+            <p>Days Remaining</p>
+        </div>
+
+        <div class="balance-card">
+            <h3>🏖 Earned Leave</h3>
+            <h1>15</h1>
+            <p>Days Remaining</p>
+        </div>
+
+        <div class="balance-card">
+            <h3>🎉 Optional Leave</h3>
+            <h1>03</h1>
+            <p>Days Remaining</p>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payroll | One Enterprise Cloud</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+
+<div class="logo">
+☁ One Enterprise Cloud
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+<li><a href="employees.html">👨‍💼 Employees</a></li>
+<li><a href="attendance.html">📅 Attendance</a></li>
+<li><a href="leave.html">🌴 Leave</a></li>
+<li><a href="payroll.html">💰 Payroll</a></li>
+<li><a href="#">🤝 CRM</a></li>
+<li><a href="#">💳 Finance</a></li>
+<li><a href="index.html">🚪 Logout</a></li>
+
+</ul>
+
+</aside>
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>💰 Payroll Management</h1>
+
+<p>Salary Processing & Payslip Management</p>
+
+</div>
+
+<div class="profile">
+
+<img src="imgs/WhatsApp Image 2026-08-03 at 16.32.21.jpeg" alt="Profile">
+
+<div>
+
+<h3>Administrator</h3>
+
+<span>Payroll Manager</span>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="stats">
+
+<div class="stat-card">
+<h2>₹12.8M</h2>
+<p>Monthly Payroll</p>
+</div>
+
+<div class="stat-card">
+<h2>520</h2>
+<p>Employees Paid</p>
+</div>
+
+<div class="stat-card">
+<h2>₹1.2M</h2>
+<p>Total Bonus</p>
+</div>
+
+<div class="stat-card">
+<h2>98%</h2>
+<p>Processed</p>
+</div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-card">
+        <h2>💵</h2>
+        <h3>Generate Payslip</h3>
+        <p>Create employee payslips instantly.</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>🎁</h2>
+        <h3>Bonus Management</h3>
+        <p>Manage bonuses and incentives.</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📊</h2>
+        <h3>Payroll Reports</h3>
+        <p>Monthly and yearly payroll reports.</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>🏦</h2>
+        <h3>Bank Transfer</h3>
+        <p>Salary transfer status monitoring.</p>
+    </div>
+
+</section>
+
+  <section class="payroll-table">
+
+<h2>Employee Payroll Details</h2>
+
+<table class="employee-table">
+
+<thead>
+
+<tr>
+<th>Employee ID</th>
+<th>Name</th>
+<th>Basic Salary</th>
+<th>Bonus</th>
+<th>Deductions</th>
+<th>Net Salary</th>
+<th>Payslip</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>EMP001</td>
+<td>Ruban</td>
+<td>₹50,000</td>
+<td>₹5,000</td>
+<td>₹2,000</td>
+<td>₹53,000</td>
+<td><button class="approve-btn">Download</button></td>
+</tr>
+
+<tr>
+<td>EMP002</td>
+<td>Rahul</td>
+<td>₹45,000</td>
+<td>₹3,000</td>
+<td>₹1,500</td>
+<td>₹46,500</td>
+<td><button class="approve-btn">Download</button></td>
+</tr>
+
+<tr>
+<td>EMP003</td>
+<td>Priya</td>
+<td>₹60,000</td>
+<td>₹6,000</td>
+<td>₹3,000</td>
+<td>₹63,000</td>
+<td><button class="approve-btn">Download</button></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section class="salary-analytics">
+
+    <h2>Salary Analytics</h2>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <h3>Highest Salary</h3>
+            <h1>₹95,000</h1>
+            <p>Senior Manager</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Average Salary</h3>
+            <h1>₹58,400</h1>
+            <p>All Employees</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Total Bonus</h3>
+            <h1>₹1,20,000</h1>
+            <p>This Month</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Deductions</h3>
+            <h1>₹48,000</h1>
+            <p>Tax & PF</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="monthly-payroll">
+
+    <h2>Monthly Payroll Summary</h2>
+
+    <table class="employee-table">
+
+        <thead>
+
+            <tr>
+                <th>Month</th>
+                <th>Employees Paid</th>
+                <th>Total Salary</th>
+                <th>Status</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>August 2026</td>
+                <td>520</td>
+                <td>₹1,28,00,000</td>
+                <td>Completed</td>
+            </tr>
+
+            <tr>
+                <td>July 2026</td>
+                <td>515</td>
+                <td>₹1,24,00,000</td>
+                <td>Completed</td>
+            </tr>
+
+            <tr>
+                <td>June 2026</td>
+                <td>510</td>
+                <td>₹1,21,00,000</td>
+                <td>Completed</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<section class="bank-transfer">
+
+    <h2>🏦 Bank Transfer Status</h2>
+
+    <table class="employee-table">
+
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Bank</th>
+                <th>Account No</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Rupan</td>
+                <td>SBI</td>
+                <td>XXXX5678</td>
+                <td>₹53,000</td>
+                <td style="color:green;">✔ Success</td>
+            </tr>
+
+            <tr>
+                <td>Rahul</td>
+                <td>HDFC</td>
+                <td>XXXX4589</td>
+                <td>₹46,500</td>
+                <td style="color:green;">✔ Success</td>
+            </tr>
+
+            <tr>
+                <td>Priya</td>
+                <td>ICICI</td>
+                <td>XXXX9874</td>
+                <td>₹63,000</td>
+                <td style="color:orange;">⏳ Processing</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<section class="quick-actions">
+
+    <h2>Payroll Quick Actions</h2>
+
+    <div class="action-buttons">
+
+        <button class="action-btn">💰 Process Payroll</button>
+
+        <button class="action-btn">📄 Generate Payslips</button>
+
+        <button class="action-btn">📥 Export Excel</button>
+
+        <button class="action-btn">📧 Email Payslips</button>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>
