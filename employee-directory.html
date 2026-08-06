@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Directory | One Enterprise Cloud</title>
+
+<link rel="stylesheet" href="css/employees.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+☁ One Enterprise Cloud
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="index.html">Home</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="employee-section">
+
+<div class="container">
+
+<div class="title">
+
+<h1>Employee Directory</h1>
+
+<p>
+Search and manage enterprise employees.
+</p>
+
+</div>
+
+<div class="toolbar">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search by Name or Employee ID">
+
+
+<select id="departmentFilter">
+
+<option value="All">
+All Departments
+</option>
+
+<option value="HR">
+HR
+</option>
+
+<option value="Development">
+Development
+</option>
+
+<option value="Finance">
+Finance
+</option>
+
+<option value="CRM">
+CRM
+</option>
+
+</select>
+
+
+<select id="designationFilter">
+
+<option value="All">
+All Designations
+</option>
+
+<option value="Software Engineer">
+Software Engineer
+</option>
+
+<option value="Frontend Developer">
+Frontend Developer
+</option>
+
+<option value="Backend Developer">
+Backend Developer
+</option>
+
+<option value="HR Executive">
+HR Executive
+</option>
+
+<option value="HR Manager">
+HR Manager
+</option>
+
+<option value="Finance Manager">
+Finance Manager
+</option>
+
+<option value="Accountant">
+Accountant
+</option>
+
+<option value="CRM Executive">
+CRM Executive
+</option>
+
+<option value="Customer Success">
+Customer Success
+</option>
+
+<option value="Recruiter">
+Recruiter
+</option>
+
+</select>
+
+
+<select id="statusFilter">
+
+<option value="All">
+All Status
+</option>
+
+<option value="Active">
+Active
+</option>
+
+<option value="Inactive">
+Inactive
+</option>
+
+</select>
+
+
+<select id="sortFilter">
+
+<option value="default">
+Sort Employees
+</option>
+
+<option value="nameAsc">
+Name A-Z
+</option>
+
+<option value="nameDesc">
+Name Z-A
+</option>
+
+<option value="idAsc">
+ID Ascending
+</option>
+
+<option value="idDesc">
+ID Descending
+</option>
+
+</select>
+
+
+<button id="resetBtn">
+Reset Filters
+</button>
+
+
+</div>
+
+<div
+class="employee-grid"
+id="employeeGrid">
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/employees.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,499 @@
+/* ===============================
+   Attendance Page Main
+================================ */
+
+.attendance-table,
+.quick-actions,
+.status-legend,
+.attendance-summary{
+
+    background:#ffffff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    margin-top:30px;
+
+}
+
+
+/* ===============================
+   Headings
+================================ */
+
+.attendance-table h2,
+.quick-actions h2,
+.status-legend h2,
+.attendance-summary h2{
+
+    color:#2563eb;
+    margin-bottom:20px;
+    font-size:22px;
+
+}
+
+
+/* ===============================
+   Summary Cards
+================================ */
+
+.stats{
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+    margin-top:30px;
+
+}
+
+
+.stat-card{
+
+    background:#ffffff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+.stat-card h2{
+
+    color:#2563eb;
+    font-size:32px;
+    margin-bottom:10px;
+
+}
+
+
+.stat-card p{
+
+    font-size:15px;
+    font-weight:600;
+    color:#374151;
+
+}
+
+
+
+/* ===============================
+   Current Date
+================================ */
+
+.current-date{
+
+    margin-top:25px;
+    background:#ffffff;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.06);
+    font-weight:600;
+
+}
+
+
+/* ===============================
+   Search Filter
+================================ */
+
+.attendance-filter{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+
+}
+
+
+
+.attendance-filter input,
+.attendance-filter select{
+
+    height:42px;
+    padding:0 15px;
+    border-radius:8px;
+    border:1px solid #d1d5db;
+    font-size:14px;
+    background:white;
+
+}
+
+
+.attendance-filter input{
+
+    width:280px;
+
+}
+
+
+.attendance-filter select{
+
+    width:200px;
+
+}
+
+
+
+/* ===============================
+   Attendance Table
+================================ */
+
+.employee-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+
+.employee-table th{
+
+    background:#2563eb;
+    color:white;
+    padding:14px;
+    text-align:center;
+
+}
+
+
+
+.employee-table td{
+
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+
+
+.employee-table tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+
+/* ===============================
+   Status Badge
+================================ */
+
+.status{
+
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:20px;
+    color:white;
+    font-size:13px;
+    font-weight:600;
+
+}
+
+
+
+.present{
+
+    background:#16a34a;
+
+}
+
+
+
+.absent{
+
+    background:#dc2626;
+
+}
+
+
+
+.halfday{
+
+    background:#f59e0b;
+
+}
+
+
+
+.wfh{
+
+    background:#2563eb;
+
+}
+
+/* ===============================
+   Quick Action Buttons
+================================ */
+
+.action-buttons{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+
+}
+
+
+
+.action-btn{
+
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+
+}
+
+
+
+.action-btn:hover{
+
+    opacity:.85;
+    transform:translateY(-1px);
+
+}
+
+
+
+
+
+/* ===============================
+   Status Legend
+================================ */
+
+.legend-items{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+
+}
+
+
+
+
+/* ===============================
+   Attendance Summary Box
+================================ */
+
+.summary-box{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+
+}
+
+
+
+.summary-box div{
+
+    background:#f8fafc;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+
+}
+
+
+
+.summary-box h3{
+
+    color:#2563eb;
+    margin-bottom:10px;
+
+}
+
+
+
+.summary-box p{
+
+    font-size:30px;
+    font-weight:700;
+    margin:0;
+
+}
+
+
+
+
+
+/* ===============================
+   Attendance Select (For JS)
+================================ */
+
+.attendance-select,
+#attendanceTableBody select{
+
+    width:150px;
+    height:38px;
+    padding:0 10px;
+    border-radius:8px;
+    border:1px solid #d1d5db;
+    background:white;
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* ===============================
+   Action Column
+================================ */
+
+.employee-table th:last-child,
+.employee-table td:last-child{
+
+    width:260px;
+
+}
+
+
+
+
+
+/* ===============================
+   Mark / Update / Reset Buttons
+   (For JS generated buttons)
+================================ */
+
+.mark-btn,
+.update-btn,
+.reset-btn{
+
+    width:100px;
+    height:36px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    margin:3px;
+
+}
+
+
+
+.mark-btn{
+
+    background:#2563eb;
+
+}
+
+
+
+.update-btn{
+
+    background:#16a34a;
+
+}
+
+
+
+.reset-btn{
+
+    background:#dc2626;
+
+}
+
+
+
+.mark-btn:hover,
+.update-btn:hover,
+.reset-btn:hover{
+
+    opacity:.85;
+
+}
+
+
+
+
+
+/* ===============================
+   Responsive
+================================ */
+
+@media(max-width:1024px){
+
+    .stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .summary-box{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .attendance-table{
+
+        overflow-x:auto;
+
+    }
+
+
+
+    .attendance-filter{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .attendance-filter input,
+    .attendance-filter select{
+
+        width:100%;
+
+    }
+
+
+
+    .stats,
+    .summary-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .action-buttons{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .action-btn{
+
+        width:100%;
+
+    }
+
+
+}

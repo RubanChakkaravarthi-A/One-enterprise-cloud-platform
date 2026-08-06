@@ -1,4 +1,4 @@
-let employees = [];
+let employees = JSON.parse(localStorage.getItem("employees")) || [];
 
 let editIndex = -1;
 
@@ -58,17 +58,21 @@ employeeForm.addEventListener("submit", function(e){
 
     const employee = {
 
-        id: document.getElementById("empId").value,
+    id: document.getElementById("empId").value,
 
-        name: document.getElementById("empName").value,
+    name: document.getElementById("empName").value,
 
-        department: document.getElementById("department").value,
+    department: document.getElementById("department").value,
 
-        designation: document.getElementById("designation").value,
+    designation: document.getElementById("designation").value,
 
-        email: document.getElementById("email").value
+    email: document.getElementById("email").value,
 
-    };
+    photo: document.getElementById("photo").value,
+
+    status: document.getElementById("status").value
+
+};
 
     if(editIndex === -1){
 
@@ -83,6 +87,8 @@ employeeForm.addEventListener("submit", function(e){
         submitBtn.textContent = "Add Employee";
 
     }
+    
+    localStorage.setItem("employees", JSON.stringify(employees));
 
     renderTable();
 
@@ -99,6 +105,8 @@ function editEmployee(index){
     document.getElementById("department").value = employees[index].department;
     document.getElementById("designation").value = employees[index].designation;
     document.getElementById("email").value = employees[index].email;
+    document.getElementById("photo").value = employees[index].photo;
+    document.getElementById("status").value = employees[index].status;
 
     submitBtn.textContent = "Update Employee";
 
@@ -111,6 +119,8 @@ function deleteEmployee(index){
     if(confirmDelete){
 
         employees.splice(index, 1);
+
+        localStorage.setItem("employees", JSON.stringify(employees));
 
         renderTable();
 
@@ -127,3 +137,4 @@ function deleteEmployee(index){
     }
 
 }
+renderTable();
