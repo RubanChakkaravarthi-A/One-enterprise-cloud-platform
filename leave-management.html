@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Leave Management | One Enterprise Cloud
+</title>
+
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet" href="css/leave-management.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+☁ One Enterprise Cloud
+
+</div>
+
+
+
+<ul>
+
+
+<li>
+<a href="dashboard.html">
+🏠 Dashboard
+</a>
+</li>
+
+
+<li>
+<a href="employee-management.html">
+👨‍💼 Employees
+</a>
+</li>
+
+
+<li>
+<a href="attendance.html">
+📅 Attendance
+</a>
+</li>
+
+
+<li>
+<a href="leave-management.html">
+🌴 Leave
+</a>
+</li>
+
+
+<li>
+<a href="#">
+💰 Payroll
+</a>
+</li>
+
+
+<li>
+<a href="#">
+🤝 CRM
+</a>
+</li>
+
+
+<li>
+<a href="#">
+💳 Finance
+</a>
+</li>
+
+
+<li>
+<a href="index.html">
+🚪 Logout
+</a>
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+<main class="content">
+
+
+
+<header class="topbar">
+
+
+<div>
+
+
+<h1>
+🌴 Leave Management
+</h1>
+
+
+<p>
+Employee Leave Request Management System
+</p>
+
+
+</div>
+
+
+
+
+<div class="profile">
+
+
+<img src="imgs/WhatsApp Image 2026-08-03 at 16.32.21.jpeg">
+
+
+<div>
+
+<h3>
+Administrator
+</h3>
+
+
+<span>
+System Admin
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+<section class="stats">
+
+
+<div class="stat-card">
+
+<h2 id="pendingLeaves">
+0
+</h2>
+
+<p>
+Pending Requests
+</p>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h2 id="approvedLeaves">
+0
+</h2>
+
+<p>
+Approved Leaves
+</p>
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+<h2 id="rejectedLeaves">
+0
+</h2>
+
+<p>
+Rejected Leaves
+</p>
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+<h2 id="totalLeaves">
+0
+</h2>
+
+<p>
+Total Leave Requests
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="apply-leave">
+
+
+<h2>
+📝 Apply Leave
+</h2>
+
+
+
+<form id="leaveForm">
+
+
+
+<div class="leave-form">
+
+
+
+<div class="form-group">
+
+
+<label>
+Employee ID
+</label>
+
+
+<select id="employeeId">
+
+<option value="">
+Select Employee
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Employee Name
+</label>
+
+
+<input 
+type="text"
+id="employeeName"
+readonly>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Department
+</label>
+
+
+<input 
+type="text"
+id="department"
+readonly>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Leave Type
+</label>
+
+
+<select id="leaveType">
+
+
+<option value="">
+Select Leave Type
+</option>
+
+
+<option value="Casual Leave">
+Casual Leave
+</option>
+
+
+<option value="Sick Leave">
+Sick Leave
+</option>
+
+
+<option value="Earned Leave">
+Earned Leave
+</option>
+
+<option value="Maternity Leave">
+Maternity Leave
+</option>
+
+<option value="Optional Leave">
+Optional Leave
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+From Date
+</label>
+
+
+<input 
+type="date"
+id="fromDate">
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+To Date
+</label>
+
+
+<input 
+type="date"
+id="toDate">
+
+
+</div>
+
+<!-- Continue Apply Leave Form -->
+
+
+<div class="form-group">
+
+
+<label>
+Total Days
+</label>
+
+
+<input 
+type="number"
+id="totalDays"
+readonly>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="form-group reason-box">
+
+
+<label>
+Reason
+</label>
+
+
+<textarea
+
+id="reason"
+
+placeholder="Enter leave reason">
+
+</textarea>
+
+
+</div>
+
+
+
+
+
+<div class="buttons">
+
+
+<button
+
+type="submit"
+
+class="apply-btn">
+
+Apply Leave
+
+</button>
+
+
+
+<button
+
+type="reset"
+
+class="reset-btn">
+
+Reset
+
+</button>
+
+
+</div>
+
+
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Leave Requests -->
+
+
+<section class="leave-table">
+
+
+<h2>
+📋 Leave Requests
+</h2>
+
+
+
+
+<table class="employee-table">
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Employee ID
+</th>
+
+
+<th>
+Employee Name
+</th>
+
+
+<th>
+Department
+</th>
+
+
+<th>
+Leave Type
+</th>
+
+
+<th>
+From Date
+</th>
+
+
+<th>
+To Date
+</th>
+
+
+<th>
+Days
+</th>
+
+
+<th>
+Reason
+</th>
+
+
+<th>
+Status
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="leaveTableBody">
+
+
+</tbody>
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Leave Balance -->
+
+
+<section class="leave-balance">
+
+
+<h2>
+📊 Leave Balance
+</h2>
+
+
+
+
+<div class="balance-grid">
+
+
+
+
+
+<div class="balance-card">
+
+
+<h3>
+🌴 Casual Leave
+</h3>
+
+
+<h1>
+08
+</h1>
+
+
+<p>
+Days Remaining
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="balance-card">
+
+
+<h3>
+🏥 Sick Leave
+</h3>
+
+
+<h1>
+12
+</h1>
+
+
+<p>
+Days Remaining
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="balance-card">
+
+
+<h3>
+🏖 Earned Leave
+</h3>
+
+
+<h1>
+15
+</h1>
+
+
+<p>
+Days Remaining
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="balance-card">
+
+
+<h3>
+🎉 Optional Leave
+</h3>
+
+
+<h1>
+03
+</h1>
+
+
+<p>
+Days Remaining
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Leave Analytics -->
+
+
+<section class="features">
+
+
+
+<div class="feature-card">
+
+
+<h2>
+📝
+</h2>
+
+
+<h3>
+Apply Leave
+</h3>
+
+
+<p>
+Submit employee leave requests
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature-card">
+
+
+<h2>
+✅
+</h2>
+
+
+<h3>
+Approved
+</h3>
+
+
+<p>
+Approved leave requests
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature-card">
+
+
+<h2>
+⏳
+</h2>
+
+
+<h3>
+Pending
+</h3>
+
+
+<p>
+Waiting for approval
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature-card">
+
+
+<h2>
+❌
+</h2>
+
+
+<h3>
+Rejected
+</h3>
+
+
+<p>
+Rejected leave requests
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="js/leave-management.js"></script>
+
+
+
+</body>
+
+
+</html>

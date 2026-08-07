@@ -68,6 +68,10 @@ employeeForm.addEventListener("submit", function(e){
 
     email: document.getElementById("email").value,
 
+    phone: document.getElementById("phone").value,
+
+   joiningDate: document.getElementById("joiningDate").value,
+
     photo: document.getElementById("photo").value,
 
     status: document.getElementById("status").value
@@ -105,6 +109,8 @@ function editEmployee(index){
     document.getElementById("department").value = employees[index].department;
     document.getElementById("designation").value = employees[index].designation;
     document.getElementById("email").value = employees[index].email;
+    document.getElementById("phone").value = employees[index].phone || "";
+    document.getElementById("joiningDate").value = employees[index].joiningDate || "";
     document.getElementById("photo").value = employees[index].photo;
     document.getElementById("status").value = employees[index].status;
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave Approval Dashboard</title>
+
+    <link rel="stylesheet" href="css/leave-approval.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Leave Approval Dashboard</h1>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingCount">0</p>
+        </div>
+
+
+        <div class="card">
+            <h3>Approved</h3>
+            <p id="approvedCount">0</p>
+        </div>
+
+
+        <div class="card">
+            <h3>Rejected</h3>
+            <p id="rejectedCount">0</p>
+        </div>
+
+
+    </div>
+
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Leave Type</th>
+                <th>Days</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody id="leaveTableBody">
+
+        </tbody>
+
+
+    </table>
+
+
+</div>
+
+
+
+<script src="js/leave-approval.js"></script>
+
+</body>
+</html>

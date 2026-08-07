@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management | One Enterprise Cloud</title>
 
-    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="css/employee-management.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
             <li><a href="dashboard.html">🏠 Dashboard</a></li>
             <li><a href="employee-management.html" class="active">👨‍💼 Employee Management</a></li>
             <li><a href="attendance.html">📅 Attendance</a></li>
-            <li><a href="leave.html">🌴 Leave</a></li>
+            <li><a href="leave-management.html">🌴 Leave</a></li>
             <li><a href="payroll.html">💰 Payroll</a></li>
             <li><a href="crm.html">🤝 CRM</a></li>
             <li><a href="finance.html">💳 Finance</a></li>
@@ -165,6 +165,22 @@
                 </div>
 
                 <div class="form-group">
+    <label>Phone Number</label>
+    <input 
+    type="text" 
+    id="phone" 
+    placeholder="Enter Phone Number">
+</div>
+
+
+<div class="form-group">
+    <label>Joining Date</label>
+    <input 
+    type="date" 
+    id="joiningDate">
+</div>
+
+                <div class="form-group">
     <label>Employee Photo</label>
     <input type="text" id="photo" placeholder="Enter Photo URL">
 </div>
@@ -247,6 +263,6 @@ Inactive
 
 </body>
 
-<script src="js/employee.js"></script>
+<script src="js/employee-management.js"></script>
 
 </html>

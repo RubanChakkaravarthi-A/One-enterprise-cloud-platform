@@ -1,0 +1,1008 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:
+    linear-gradient(135deg,#eef5ff,#f8fbff);
+
+    color:#1f2937;
+
+}
+
+
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+
+.sidebar{
+
+    width:260px;
+
+    background:#ffffff;
+
+    padding:30px 20px;
+
+    position:fixed;
+
+    height:100vh;
+
+    box-shadow:
+    5px 0 20px rgba(0,0,0,.06);
+
+}
+
+
+
+.logo{
+
+    font-size:26px;
+
+    font-weight:800;
+
+    color:#2563eb;
+
+    margin-bottom:45px;
+
+}
+
+
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+
+
+.sidebar li{
+
+    margin:20px 0;
+
+}
+
+
+
+.sidebar a{
+
+    text-decoration:none;
+
+    color:#374151;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar a:hover{
+
+    color:#2563eb;
+
+}
+
+
+
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+
+.content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:30px;
+
+}
+
+
+
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.topbar h1{
+
+    color:#2563eb;
+
+    font-size:32px;
+
+}
+
+
+
+.topbar p{
+
+    color:#6b7280;
+
+    margin-top:6px;
+
+}
+
+
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+.profile img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* =========================
+   STAT CARDS
+========================= */
+
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.stat-card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.stat-card h2{
+
+    color:#2563eb;
+
+    font-size:34px;
+
+    font-weight:800;
+
+}
+
+
+
+.stat-card p{
+
+    color:#6b7280;
+
+    margin-top:8px;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+/* =========================
+   APPLY LEAVE SECTION
+========================= */
+
+
+.apply-leave{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.apply-leave h2{
+
+    color:#2563eb;
+
+    font-size:25px;
+
+    margin-bottom:22px;
+
+}
+
+
+
+
+
+/* FORM */
+
+
+.leave-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px 25px;
+
+}
+
+
+
+
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.form-group label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#374151;
+
+    margin-bottom:6px;
+
+}
+
+
+
+
+
+/* SAME SIZE INPUT SELECT */
+
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+
+    width:100%;
+
+    height:42px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+    padding:0 12px;
+
+    font-size:14px;
+
+    background:#fff;
+
+    color:#374151;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.form-group textarea{
+
+    height:85px;
+
+    padding-top:12px;
+
+    resize:none;
+
+}
+
+
+
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+
+    border-color:#2563eb;
+
+    box-shadow:
+
+    0 0 0 3px rgba(37,99,235,.12);
+
+}
+
+
+
+
+
+.reason-box{
+
+    grid-column:1/-1;
+
+}
+
+
+
+
+
+
+/* BUTTONS */
+
+
+.buttons{
+
+    grid-column:1/-1;
+
+    margin-top:5px;
+
+}
+
+
+
+.apply-btn,
+.reset-btn{
+
+
+    height:40px;
+
+    padding:0 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-right:10px;
+
+}
+
+
+
+.apply-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+
+.apply-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+.reset-btn{
+
+    background:#6b7280;
+
+    color:white;
+
+}
+
+
+
+.reset-btn:hover{
+
+    background:#4b5563;
+
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.feature-card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.feature-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.feature-card h2{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.feature-card h3{
+
+    color:#2563eb;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.feature-card p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+/* =========================
+   LEAVE REQUEST TABLE
+========================= */
+
+
+.leave-table{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.leave-table h2{
+
+    color:#2563eb;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.employee-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+.employee-table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:13px;
+
+    text-align:center;
+
+}
+
+
+
+.employee-table td{
+
+    padding:13px;
+
+    text-align:center;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+
+
+.employee-table tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+
+
+
+/* =========================
+   STATUS BADGE
+========================= */
+
+
+.pending,
+.approved,
+.rejected{
+
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+
+.pending{
+
+    background:#f59e0b;
+
+}
+
+
+
+.approved{
+
+    background:#16a34a;
+
+}
+
+
+
+.rejected{
+
+    background:#dc2626;
+
+}
+
+
+
+
+
+/* =========================
+   LEAVE ACTION BUTTONS
+========================= */
+
+.approve-btn,
+.reject-btn{
+
+    width:100px;
+    height:38px;
+
+    border:none;
+    border-radius:8px;
+
+    color:#ffffff;
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:3px;
+
+    transition:.25s ease;
+
+}
+
+
+.approve-btn{
+
+    background:#16a34a;
+
+}
+
+
+.reject-btn{
+
+    background:#dc2626;
+
+}
+
+
+.approve-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-1px);
+
+}
+
+
+.reject-btn:hover{
+
+    background:#b91c1c;
+
+    transform:translateY(-1px);
+
+}
+
+
+
+.approve-btn{
+
+    background:#16a34a;
+
+}
+
+
+
+.reject-btn{
+
+    background:#dc2626;
+
+}
+
+
+
+.approve-btn:hover{
+
+    background:#15803d;
+
+}
+
+
+
+.reject-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+
+
+
+
+/* =========================
+   LEAVE BALANCE
+========================= */
+
+
+.leave-balance{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.leave-balance h2{
+
+    color:#2563eb;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.balance-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+
+
+
+
+.balance-card{
+
+    background:#f8fafc;
+
+    padding:22px;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    border:1px solid #e5e7eb;
+
+}
+
+
+
+
+
+.balance-card h3{
+
+    color:#2563eb;
+
+    font-size:17px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.balance-card h1{
+
+    color:#111827;
+
+    font-size:38px;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.balance-card p{
+
+    color:#6b7280;
+
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1200px){
+
+
+    .stats,
+    .features,
+    .balance-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:768px){
+
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+
+.dashboard{
+
+    flex-direction:column;
+
+}
+
+
+
+.content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+
+
+.stats,
+.features,
+.balance-grid,
+.leave-form{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.employee-table{
+
+    display:block;
+
+    overflow-x:auto;
+
+}
+
+
+}
+
+
+
+/* Empty Data */
+
+.no-data{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#6b7280;
+
+}

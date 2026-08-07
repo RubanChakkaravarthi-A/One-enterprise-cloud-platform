@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+    background:#f4f7fb;
+    padding:30px;
+}
+
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:auto;
+}
+
+
+h1{
+    text-align:center;
+    margin-bottom:35px;
+    color:#1f2937;
+}
+
+
+h2{
+    margin:30px 0 20px;
+    color:#1f2937;
+}
+
+
+
+/* Dashboard Cards */
+
+.dashboard-cards{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+
+
+.card{
+
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+.card h3{
+
+    color:#6b7280;
+    font-size:16px;
+    margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+    font-size:32px;
+    font-weight:bold;
+    color:#2563eb;
+
+}
+
+
+
+
+
+/* Activity Table */
+
+
+table{
+
+    width:100%;
+    background:white;
+    border-collapse:collapse;
+    border-radius:15px;
+    overflow:hidden;
+
+}
+
+
+
+th{
+
+    background:#2563eb;
+    color:white;
+    padding:15px;
+
+}
+
+
+
+td{
+
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:768px){
+
+    .dashboard-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    table{
+
+        font-size:13px;
+
+    }
+
+}

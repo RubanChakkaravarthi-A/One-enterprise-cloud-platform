@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Employee Profile & Reports</title>
+
+    <link rel="stylesheet" href="css/employee-profile.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <h1>Employee Profile & Reports</h1>
+
+
+
+    <!-- Employee Selection -->
+
+    <div class="profile-selector">
+
+        <label>Select Employee</label>
+
+        <select id="employeeSelect">
+
+            <option value="">
+                Select Employee
+            </option>
+
+        </select>
+
+
+    </div>
+
+
+
+
+    <!-- Employee Profile Card -->
+
+
+    <div class="profile-card">
+
+
+        <div class="profile-header">
+
+
+            <img id="employeePhoto" 
+            src="" 
+            alt="Employee Photo">
+
+
+
+            <div>
+
+                <h2 id="employeeName">
+                    Employee Name
+                </h2>
+
+                <p id="employeeDesignation">
+                    Designation
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+
+<div class="details">
+
+<p>
+<b>Employee ID:</b>
+<span id="profileId"></span>
+</p>
+
+<p>
+<b>Name:</b>
+<span id="profileName"></span>
+</p>
+
+<p>
+<b>Department:</b>
+<span id="profileDepartment"></span>
+</p>
+
+<p>
+<b>Email:</b>
+<span id="profileEmail"></span>
+</p>
+
+<p>
+<b>Phone:</b>
+<span id="profilePhone"></span>
+</p>
+
+<p>
+<b>Joining Date:</b>
+<span id="profileJoiningDate"></span>
+</p>
+
+</div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Reports -->
+
+
+    <h2>Attendance Reports</h2>
+
+
+    <div class="report-cards">
+
+
+        <div class="card">
+
+            <h3>Total Working Days</h3>
+
+            <p id="workingDays">
+                0
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>Present Days</h3>
+
+            <p id="presentDays">
+                0
+            </p>
+
+        </div>
+
+
+
+
+        <div class="card">
+
+            <h3>Leave Days</h3>
+
+            <p id="leaveDays">
+                0
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="card">
+
+            <h3>Attendance %</h3>
+
+            <p id="attendancePercentage">
+                0%
+            </p>
+
+        </div>
+
+
+
+    </div>
+
+
+<section class="leave-balance">
+
+    <h2>Leave Balance</h2>
+
+    <div class="leave-balance-container">
+
+        <div class="leave-card">
+            <h3>Casual Leave</h3>
+            <p id="casualLeave">0</p>
+        </div>
+
+
+        <div class="leave-card">
+            <h3>Sick Leave</h3>
+            <p id="sickLeave">0</p>
+        </div>
+
+
+        <div class="leave-card">
+            <h3>Earned Leave</h3>
+            <p id="earnedLeave">0</p>
+        </div>
+
+
+        <div class="leave-card">
+            <h3>Optional Leave</h3>
+            <p id="optionalLeave">0</p>
+        </div>
+
+
+        <div class="leave-card">
+            <h3>Maternity Leave</h3>
+            <p id="maternityLeave">0</p>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+    <!-- Leave History -->
+
+
+    <h2>Leave History</h2>
+
+
+    <table>
+
+
+        <thead>
+
+            <tr>
+
+                <th>Leave Type</th>
+
+                <th>From Date</th>
+
+                <th>To Date</th>
+
+                <th>Days</th>
+
+                <th>Status</th>
+
+            </tr>
+
+
+        </thead>
+
+
+        <tbody id="leaveHistory">
+
+
+        </tbody>
+
+
+    </table>
+
+
+
+
+
+
+    <div class="buttons">
+
+
+        <button onclick="printProfile()">
+            Print Profile
+        </button>
+
+
+
+        <button id="downloadBtn">
+    Download Profile
+</button>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="js/employee-profile.js"></script>
+
+
+</body>
+
+</html>
