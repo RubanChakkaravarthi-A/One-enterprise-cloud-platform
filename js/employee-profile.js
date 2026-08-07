@@ -1,494 +1,645 @@
-// Load Existing Data
+// ===============================
+// LOAD DATA FROM LOCAL STORAGE
+// ===============================
 
-let employees = JSON.parse(
-    localStorage.getItem("employees")
-) || [];
+let employees =
+    JSON.parse(localStorage.getItem("employees")) || [];
 
+let attendance =
+    JSON.parse(localStorage.getItem("attendance")) || [];
 
-let attendance = JSON.parse(
-    localStorage.getItem("attendance")
-) || [];
-
-
-let leaveRequests = JSON.parse(
-    localStorage.getItem("leaveRequests")
-) || [];
+let leaveRequests =
+    JSON.parse(localStorage.getItem("leaveRequests")) || [];
 
 
-
-
-// Elements
+// ===============================
+// ELEMENTS
+// ===============================
 
 const employeeSelect =
-document.getElementById("employeeSelect");
-
+    document.getElementById("employeeSelect");
 
 const employeeName =
-document.getElementById("employeeName");
+    document.getElementById("employeeName");
 
+const employeeProfileName =
+    document.getElementById("profileName");
 
 const employeeId =
-document.getElementById("profileId");
-
+    document.getElementById("profileId");
 
 const employeeDepartment =
-document.getElementById("profileDepartment");
-
+    document.getElementById("profileDepartment");
 
 const employeeDesignation =
-document.getElementById("employeeDesignation");
-
+    document.getElementById("employeeDesignation");
 
 const employeeEmail =
-document.getElementById("profileEmail");
-
+    document.getElementById("profileEmail");
 
 const employeePhoto =
-document.getElementById("employeePhoto");
-
+    document.getElementById("employeePhoto");
 
 const employeePhone =
-document.getElementById("profilePhone");
-
+    document.getElementById("profilePhone");
 
 const joiningDate =
-document.getElementById("profileJoiningDate");
-
-
+    document.getElementById("profileJoiningDate");
 
 const workingDays =
-document.getElementById("workingDays");
-
+    document.getElementById("workingDays");
 
 const presentDays =
-document.getElementById("presentDays");
-
+    document.getElementById("presentDays");
 
 const leaveDays =
-document.getElementById("leaveDays");
-
+    document.getElementById("leaveDays");
 
 const attendancePercentage =
-document.getElementById("attendancePercentage");
-
+    document.getElementById("attendancePercentage");
 
 const leaveHistory =
-document.getElementById("leaveHistory");
-
+    document.getElementById("leaveHistory");
 
 const casualLeave =
-document.getElementById("casualLeave");
+    document.getElementById("casualLeave");
 
 const sickLeave =
-document.getElementById("sickLeave");
+    document.getElementById("sickLeave");
 
 const earnedLeave =
-document.getElementById("earnedLeave");
+    document.getElementById("earnedLeave");
 
 const optionalLeave =
-document.getElementById("optionalLeave");
+    document.getElementById("optionalLeave");
 
 const maternityLeave =
-document.getElementById("maternityLeave");
+    document.getElementById("maternityLeave");
 
 
+// ===============================
+// LOAD EMPLOYEES INTO DROPDOWN
+// ===============================
 
+employeeSelect.innerHTML = `
+    <option value="">
+        Select Employee
+    </option>
+`;
 
-// Load Employees Dropdown
+employees.forEach(employee => {
 
+    const option =
+        document.createElement("option");
 
-employees.forEach(emp=>{
+    option.value = employee.id;
 
-
-    let option=document.createElement("option");
-
-
-    option.value=emp.id;
-
-
-    option.textContent=
-    emp.name + " - " + emp.id;
-
+    option.textContent =
+        employee.name + " - " + employee.id;
 
     employeeSelect.appendChild(option);
 
-
 });
 
 
+// ===============================
+// DATE HELPER
+// ===============================
+
+function parseDate(dateString) {
+
+    if (!dateString) {
+        return null;
+    }
+
+    const date =
+        new Date(dateString);
+
+    if (isNaN(date.getTime())) {
+        return null;
+    }
+
+    date.setHours(0, 0, 0, 0);
+
+    return date;
+}
 
 
+// ===============================
+// CHECK WHETHER ATTENDANCE DATE
+// IS INSIDE APPROVED LEAVE
+// ===============================
+
+function isDateOnApprovedLeave(
+    attendanceDate,
+    approvedLeaves
+) {
+
+    const date =
+        parseDate(attendanceDate);
+
+    if (!date) {
+        return false;
+    }
+
+    return approvedLeaves.some(leave => {
+
+        const from =
+            parseDate(leave.fromDate);
+
+        const to =
+            parseDate(leave.toDate);
+
+        if (!from || !to) {
+            return false;
+        }
+
+        return date >= from && date <= to;
+
+    });
+
+}
 
 
-
-
-// Employee Selection
-
+// ===============================
+// EMPLOYEE SELECTION
+// ===============================
 
 employeeSelect.addEventListener(
-"change",
-function(){
+    "change",
+    function () {
 
+        const id = this.value;
 
-    let id=this.value;
+        if (id === "") {
 
+            localStorage.removeItem(
+                "selectedEmployee"
+            );
 
-    if(id===""){
+            return;
+        }
 
-        return;
+        localStorage.setItem(
+            "selectedEmployee",
+            id
+        );
 
-    }
-
-localStorage.setItem(
-    "selectedEmployee",
-     id
-    );
-
-    loadProfile(id);
-
-
-});
-
-
-
-
-
-
-
-
-function loadProfile(id){
-
-   // Refresh latest leave data from localStorage
-
-    leaveRequests = JSON.parse(
-        localStorage.getItem("leaveRequests")
-    ) || [];
-
-    let employee =
-    employees.find(
-        emp=>emp.id===id
-    );
-
-
-
-    if(!employee){
-
-        return;
+        loadProfile(id);
 
     }
+);
 
 
+// ===============================
+// LOAD EMPLOYEE PROFILE
+// ===============================
+
+function loadProfile(id) {
+
+    // Always get latest data
+    // from localStorage
+
+    employees =
+        JSON.parse(
+            localStorage.getItem("employees")
+        ) || [];
+
+    attendance =
+        JSON.parse(
+            localStorage.getItem("attendance")
+        ) || [];
+
+    leaveRequests =
+        JSON.parse(
+            localStorage.getItem("leaveRequests")
+        ) || [];
 
 
+    const employee =
+        employees.find(
+            emp => String(emp.id) === String(id)
+        );
 
-    // Profile Details
 
+    if (!employee) {
+        return;
+    }
+
+
+    // ===========================
+    // PROFILE DETAILS
+    // ===========================
 
     employeeName.textContent =
-    employee.name;
+        employee.name || "Not Available";
 
+    if (employeeProfileName) {
+
+        employeeProfileName.textContent =
+            employee.name || "Not Available";
+
+    }
 
     employeeId.textContent =
-    employee.id;
-
+        employee.id || "Not Available";
 
     employeeDepartment.textContent =
-    employee.department;
-
+        employee.department || "Not Available";
 
     employeeDesignation.textContent =
-    employee.designation;
-
+        employee.designation || "Not Available";
 
     employeeEmail.textContent =
-    employee.email;
-
-
+        employee.email || "Not Available";
 
     employeePhone.textContent =
-    employee.phone || "Not Available";
-
+        employee.phone || "Not Available";
 
     joiningDate.textContent =
-    employee.joiningDate || "Not Available";
+        employee.joiningDate || "Not Available";
 
 
+    if (employee.photo && employee.photo.trim() !== "") {
 
-    employeePhoto.src =
-employee.photo || "imgs/default-profile.png";
+    employeePhoto.src = employee.photo;
 
+    employeePhoto.onerror = function () {
+        this.src = "images/default-profile.png";
+    };
 
+} else {
 
+    employeePhoto.src = "imgs/default-profile.png";
 
-
-
-
-    // Attendance Report
-
-
-    let empAttendance =
-    attendance.filter(
-        att=>att.id===id
-    );
+}
 
 
+// ===============================
+// EMPLOYEE LEAVE DATA
+// ===============================
 
-    let present =
-    empAttendance.filter(
-        att=>att.status==="Present"
-    ).length;
+    const empLeaves =
+        leaveRequests.filter(
+            leave =>
+                String(leave.employeeId) ===
+                String(id)
+        );
 
 
+    // ONLY APPROVED LEAVES
+    // affect attendance and balance
 
-    let total =
-    empAttendance.length;
+    const approvedLeaves =
+        empLeaves.filter(
+            leave =>
+                String(leave.status)
+                    .toLowerCase() ===
+                "approved"
+        );
 
+
+// ===============================
+// ATTENDANCE REPORT
+// ===============================
+
+    const empAttendance =
+        attendance.filter(
+            att =>
+                String(
+                    att.id ?? att.employeeId
+                ) === String(id)
+        );
+
+
+    // Remove attendance records
+    // that fall inside approved leave
+
+    const validAttendance =
+        empAttendance.filter(
+            att =>
+                !isDateOnApprovedLeave(
+                    att.date ||
+                    att.attendanceDate,
+                    approvedLeaves
+                )
+        );
+
+
+    const present =
+        validAttendance.filter(
+            att =>
+                String(att.status)
+                    .toLowerCase() ===
+                "present"
+        ).length;
+
+
+    const total =
+        validAttendance.length;
 
 
     let percentage = 0;
 
 
-    if(total>0){
+    if (total > 0) {
 
         percentage =
-        ((present/total)*100).toFixed(2);
+            ((present / total) * 100)
+                .toFixed(2);
 
     }
 
 
-
     workingDays.textContent =
-    total;
-
+        total;
 
     presentDays.textContent =
-    present;
-
+        present;
 
     attendancePercentage.textContent =
-    percentage+"%";
+        percentage + "%";
 
 
+// ===============================
+// APPROVED LEAVE DAYS
+// ===============================
+
+    let approvedLeaveDays = 0;
 
 
+    approvedLeaves.forEach(leave => {
 
-
-
-
-    // Leave History
-
-
-    let empLeaves =
-    leaveRequests.filter(
-        leave=>leave.employeeId==id
-    );
-
-
-
-    leaveHistory.innerHTML="";
-
-
-
-    let totalLeaveDays=0;
-
-
-
-    empLeaves.forEach(leave=>{
-
-
-        totalLeaveDays +=
-        Number(leave.days);
-
-
-
-        leaveHistory.innerHTML += `
-
-
-        <tr>
-
-
-        <td>
-        ${leave.leaveType}
-        </td>
-
-
-        <td>
-        ${leave.fromDate}
-        </td>
-
-
-        <td>
-        ${leave.toDate}
-        </td>
-
-
-        <td>
-        ${leave.days}
-        </td>
-
-
-        <td>
-        ${leave.status}
-        </td>
-
-
-        </tr>
-
-
-        `;
-
-
+        approvedLeaveDays +=
+            Number(leave.days) || 0;
 
     });
 
 
-
     leaveDays.textContent =
-    totalLeaveDays;
+        approvedLeaveDays;
 
 
-    // Leave Balance
+// ===============================
+// LEAVE HISTORY
+// ===============================
+
+    leaveHistory.innerHTML = "";
 
 
-let approvedLeaves =
-empLeaves.filter(
-    leave=>leave.status==="Approved"
-);
+    if (empLeaves.length === 0) {
 
+        leaveHistory.innerHTML = `
+            <tr>
+                <td colspan="5">
+                    No Leave Records
+                </td>
+            </tr>
+        `;
 
+    } else {
 
-let balance = {
+        empLeaves.forEach(leave => {
 
-    casual:5,
-    sick:3,
-    earned:7,
-    optional:2,
-    maternity:0
+            leaveHistory.innerHTML += `
 
-};
+                <tr>
 
+                    <td>
+                        ${leave.leaveType || "N/A"}
+                    </td>
 
+                    <td>
+                        ${leave.fromDate || "N/A"}
+                    </td>
 
-approvedLeaves.forEach(leave=>{
+                    <td>
+                        ${leave.toDate || "N/A"}
+                    </td>
 
+                    <td>
+                        ${leave.days || 0}
+                    </td>
 
-    if(leave.leaveType==="Casual Leave"){
+                    <td>
+                        ${leave.status || "Pending"}
+                    </td>
 
-        balance.casual -= Number(leave.days);
+                </tr>
 
-    }
+            `;
 
-
-    if(leave.leaveType==="Sick Leave"){
-
-        balance.sick -= Number(leave.days);
-
-    }
-
-
-    if(leave.leaveType==="Earned Leave"){
-
-        balance.earned -= Number(leave.days);
-
-    }
-
-
-    if(leave.leaveType==="Optional Leave"){
-
-        balance.optional -= Number(leave.days);
-
-    }
-
-
-    if(leave.leaveType==="Maternity Leave"){
-
-        balance.maternity -= Number(leave.days);
+        });
 
     }
 
 
-});
+// ===============================
+// LEAVE BALANCE
+// ===============================
+
+    let balance = {
+
+        casual: 5,
+
+        sick: 3,
+
+        earned: 7,
+
+        optional: 2,
+
+        maternity: 0
+
+    };
 
 
+    // ONLY APPROVED LEAVES
+    // are deducted
 
-casualLeave.textContent =
-balance.casual;
+    approvedLeaves.forEach(leave => {
 
-
-sickLeave.textContent =
-balance.sick;
-
-
-earnedLeave.textContent =
-balance.earned;
+        const days =
+            Number(leave.days) || 0;
 
 
-optionalLeave.textContent =
-balance.optional;
+        if (
+            leave.leaveType ===
+            "Casual Leave"
+        ) {
+
+            balance.casual -= days;
+
+        }
 
 
-maternityLeave.textContent =
-balance.maternity;
+        if (
+            leave.leaveType ===
+            "Sick Leave"
+        ) {
+
+            balance.sick -= days;
+
+        }
+
+
+        if (
+            leave.leaveType ===
+            "Earned Leave"
+        ) {
+
+            balance.earned -= days;
+
+        }
+
+
+        if (
+            leave.leaveType ===
+            "Optional Leave"
+        ) {
+
+            balance.optional -= days;
+
+        }
+
+
+        if (
+            leave.leaveType ===
+            "Maternity Leave"
+        ) {
+
+            balance.maternity -= days;
+
+        }
+
+    });
+
+
+    // Prevent negative balance display
+
+    balance.casual =
+        Math.max(0, balance.casual);
+
+    balance.sick =
+        Math.max(0, balance.sick);
+
+    balance.earned =
+        Math.max(0, balance.earned);
+
+    balance.optional =
+        Math.max(0, balance.optional);
+
+    balance.maternity =
+        Math.max(0, balance.maternity);
+
+
+    casualLeave.textContent =
+        balance.casual;
+
+    sickLeave.textContent =
+        balance.sick;
+
+    earnedLeave.textContent =
+        balance.earned;
+
+    optionalLeave.textContent =
+        balance.optional;
+
+    maternityLeave.textContent =
+        balance.maternity;
 
 }
 
 
+// ===============================
+// PRINT PROFILE
+// ===============================
 
-
-
-
-
-// Print Profile
-
-
-function printProfile(){
+function printProfile() {
 
     window.print();
 
 }
 
-// Load Previously Selected Employee
 
-let savedEmployee =
-localStorage.getItem("selectedEmployee");
+// ===============================
+// LOAD PREVIOUSLY SELECTED
+// EMPLOYEE
+// ===============================
+
+const savedEmployee =
+    localStorage.getItem(
+        "selectedEmployee"
+    );
 
 
-if(savedEmployee){
+if (savedEmployee) {
 
-    employeeSelect.value = savedEmployee;
+    const employeeExists =
+        employees.some(
+            emp =>
+                String(emp.id) ===
+                String(savedEmployee)
+        );
 
-    loadProfile(savedEmployee);
+
+    if (employeeExists) {
+
+        employeeSelect.value =
+            savedEmployee;
+
+        loadProfile(savedEmployee);
+
+    } else {
+
+        localStorage.removeItem(
+            "selectedEmployee"
+        );
+
+    }
 
 }
 
-const downloadBtn = document.getElementById("downloadBtn");
+
+// ===============================
+// DOWNLOAD PROFILE
+// ===============================
+
+const downloadBtn =
+    document.getElementById(
+        "downloadBtn"
+    );
 
 
-if(downloadBtn){
+if (downloadBtn) {
 
-downloadBtn.addEventListener("click", function(){
+    downloadBtn.addEventListener(
+        "click",
+        function () {
 
-
-let selectedId = employeeSelect.value;
-
-
-let employee = employees.find(
-emp => emp.id === selectedId
-);
+            const selectedId =
+                employeeSelect.value;
 
 
-
-if(!employee){
-
-alert("Please select employee");
-
-return;
-
-}
+            const employee =
+                employees.find(
+                    emp =>
+                        String(emp.id) ===
+                        String(selectedId)
+                );
 
 
+            if (!employee) {
 
-let data = `
+                alert(
+                    "Please select employee"
+                );
+
+                return;
+
+            }
+
+
+            const data = `
 
 Employee Profile
 
@@ -506,35 +657,44 @@ Phone: ${employee.phone || "N/A"}
 
 Joining Date: ${employee.joiningDate || "N/A"}
 
-Status: ${employee.status}
+Status: ${employee.status || "N/A"}
 
 `;
 
 
-
-let blob = new Blob(
-[data],
-{
-type:"text/plain"
-}
-);
-
-
-
-let link=document.createElement("a");
+            const blob =
+                new Blob(
+                    [data],
+                    {
+                        type:
+                            "text/plain"
+                    }
+                );
 
 
-link.href=URL.createObjectURL(blob);
+            const link =
+                document.createElement(
+                    "a"
+                );
 
 
-link.download=
-employee.name+"-profile.txt";
+            link.href =
+                URL.createObjectURL(blob);
 
 
-link.click();
+            link.download =
+                employee.name +
+                "-profile.txt";
 
 
+            link.click();
 
-});
+
+            URL.revokeObjectURL(
+                link.href
+            );
+
+        }
+    );
 
 }
